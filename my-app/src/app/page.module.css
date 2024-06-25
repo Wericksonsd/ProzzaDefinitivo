@@ -1,0 +1,14 @@
+.container{
+    height: 90vh;
+    width: 80vw;
+    background-color: var(--secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    min-height: 700px;
+    display: flex;
+}

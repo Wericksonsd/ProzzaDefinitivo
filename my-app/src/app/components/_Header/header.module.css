@@ -1,0 +1,30 @@
+.container{
+    min-height: 90px;
+    padding: 0 50px;
+    background-color: var(--principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 240px;
+    height: auto;
+    color: var(--branco);
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.profilePic{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.config{
+    margin-left: 10px;
+    height: 35px;
+}

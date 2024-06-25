@@ -1,0 +1,53 @@
+.container {
+    overflow-y: hidden;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar { 
+    display: none;
+}
+
+
+/* CHATBOX */
+
+.containerBox{
+    width: 100%;
+    min-height: 70px;
+    padding:5px 15px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.068);
+    margin-bottom: 5px;
+}
+
+.caixaMsg{
+    color: var(--branco);
+    flex: 1;
+    height: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.textdate{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profilePhoto{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.profilePhoto img{
+    width: 100%;
+    height: 100%;
+}

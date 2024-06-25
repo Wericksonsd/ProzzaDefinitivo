@@ -1,0 +1,26 @@
+.container, .containerSender{
+    width: max-content;
+    height: auto;
+    padding: 15px;
+    color: var(--branco);
+    border-radius: 15px;
+    display: flex;
+    margin-top: 15px;
+    margin-right: auto;
+    background-color: var(--secondary);
+}
+
+.container div, .containerSender div{
+    max-width: 500px;
+}
+
+.container p, .containerSender p{
+    margin-top: auto;
+    padding-left: 15px;
+}
+
+.containerSender{
+    margin-right: 0;
+    margin-left: auto;
+    background-color: var(--principal);
+}
