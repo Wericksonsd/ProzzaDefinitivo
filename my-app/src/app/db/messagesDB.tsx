@@ -101,17 +101,3 @@ export const getUserMessages = async (id: number) => {
     return userMessages ? userMessages.mensagens : null;
 }
 
-export const newMessage = async (id: number, newMsg: any) => {
-    const mnsg = getUserMsg(id);
-    if (mnsg) {
-        const newId = mnsg.mensagens.length > 0 ? mnsg.mensagens[mnsg.mensagens.length - 1].idMsg + 1 : 1;
-        mnsg.mensagens.push({
-            idMsg: newId,
-            ...newMsg
-        });
-        return mnsg.mensagens;
-    } else {
-        throw new Error("User not found");
-    }
-}
-
