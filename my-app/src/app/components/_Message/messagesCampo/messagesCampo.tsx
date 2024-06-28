@@ -4,7 +4,7 @@ import styles from "./messagesCampo.module.css"
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 
-const MessagesCampo = (props) => {
+const MessagesCampo = (props:any) => {
 
     const [nome, setNome] = useState();
     const [date, setDate] = useState();

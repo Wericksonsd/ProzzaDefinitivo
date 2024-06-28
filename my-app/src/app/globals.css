@@ -26,3 +26,18 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+.containerAAAA{
+  height: 90vh;
+  width: 80vw;
+  background-color: var(--secondary);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainAAAA{
+  min-height: 720px;
+  display: flex;
+}

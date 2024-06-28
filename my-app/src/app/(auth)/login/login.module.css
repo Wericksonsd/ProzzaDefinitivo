@@ -1,0 +1,65 @@
+.container, .containerNone{
+    height: 90vh;
+    width: 80vw;
+    background: rgb(11,79,56);
+    background: linear-gradient(180deg, rgba(11,79,56,1) 0%, rgba(9,9,8,1) 100%);
+    border-radius: 15px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.containerNone{
+    display: none;
+}
+
+.logo {
+    width: 45%;
+    height: auto;
+}
+
+.aaa{    
+    width: 70%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container input{
+    width: 60%;
+    padding: 15px;
+    background-color: rgb(224, 224, 224);
+    border: none;
+    box-shadow: none;
+    
+}
+
+.container input:focus {
+    outline: 0;
+}
+
+.botoes{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.botoes button{
+    width: 40%;
+    padding: 15px 5px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    border: none;
+    box-shadow: none;
+}
+
+.botoes button:hover{
+    opacity: 80%;
+    cursor: pointer;
+}

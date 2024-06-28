@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+.right h1{
+    color: var(--branco);
+    margin-right: 15px;
+}
+
 .profilePic{
     width: 60px;
     height: 60px;
@@ -27,4 +32,9 @@
 .config{
     margin-left: 10px;
     height: 35px;
+}
+
+.config:hover{
+    opacity: 80%;
+    cursor: pointer;
 }

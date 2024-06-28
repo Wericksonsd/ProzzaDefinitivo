@@ -22,6 +22,12 @@
     align-items: center;
     background-color: rgba(240, 248, 255, 0.068);
     margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.containerBox:hover{
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.205);
 }
 
 .caixaMsg{
@@ -37,6 +43,7 @@
 .textdate{
     display: flex;
     justify-content: space-between;
+    color: rgba(250, 235, 215, 0.692);
 }
 
 .profilePhoto{

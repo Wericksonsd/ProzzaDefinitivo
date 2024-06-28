@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+
+  completeName    String     @db.Text
+  username        String     @unique @db.Text
+  password        String     @db.VarChar(25)
+  email           String     @unique @db.Text
+  isAdm           Boolean    @default(false) @db.Boolean
+  isBanned        Boolean    @default(false) @db.Boolean
+  telephoneNumber String     @db.VarChar(11)
+  address         Address    @relation(fields: [addressId], references: [id])
+  message         Message[]
+  UserBans        UserBans[]
+  addressId       Int
+  Contacts        Contacts?
+
+  @@map("users")
+}
+
+model Address {
+  id         Int    @id @default(autoincrement())
+  zip        String @db.VarChar(8)
+  street     String @db.Text
+  number     String @db.VarChar(5)
+  complement String @db.Text
+  user       User[]
+
+  @@map("addresses")
+}
+
+model Admin {
+  id           Int        @id @unique @default(autoincrement())
+  completeName String     @db.Text
+  username     String     @unique @db.Text
+  password     String     @db.VarChar(25)
+  email        String     @unique @db.Text
+  isAdm        Boolean    @default(true) @db.Boolean
+  UserBans     UserBans[]
+
+  @@map("admins")
+}
+
+model Message {
+  id       String   @id @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content  String   @db.Text
+  sender   User     @relation(fields: [senderId], references: [id])
+  senderId String   @db.Uuid
+  timeSent DateTime @db.Timestamptz() @default(dbgenerated("now()"))
+
+  @@map("messages")
+}
+
+model UserBans {
+  id         BigInt   @id @default(autoincrement())
+  banAuthor  Admin    @relation(fields: [adminId], references: [id])
+  userBanned User     @relation(fields: [userId], references: [id])
+  banTime    DateTime @db.Timestamptz
+  adminId    Int
+  userId     String   @db.Uuid
+
+  @@map("bans")
+}
+
+model Contacts {
+  id      Int       @id @default(autoincrement())
+  ownerId String    @unique @db.Uuid
+  User    User      @relation(fields: [ownerId], references: [id])
+  friends Friends[]
+  blocked Blocked[]
+
+  @@map("contacts")
+}
+
+model Friends {
+  id         Int       @id
+  name       String
+  Contacts   Contacts? @relation(fields: [contactsId], references: [id])
+  contactsId Int?
+
+  @@map("friend")
+}
+
+model Blocked {
+  id         Int       @id
+  name       String
+  Contacts   Contacts? @relation(fields: [contactsId], references: [id])
+  contactsId Int?
+
+  @@map("blocked")
+}

@@ -1,0 +1,69 @@
+.container, .containerClosed{
+    height: auto;
+    width: 35%;
+    background-color: #0e4131ee;
+    color: var(--branco);
+    padding: 40px;
+    position: absolute;
+    translate: 120% 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerClosed{
+    display: none;
+}
+
+.foto{
+    display: flex;
+}
+
+.foto h1{
+    font-size: 2.5rem;
+}
+
+.foto div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.pfPic{
+    width: 150px;
+    border-radius: 50%;
+    height: auto;
+}
+
+.dados{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: rgba(240, 248, 255, 0.048);
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.dados:hover{
+    background-color: rgba(240, 248, 255, 0.452);
+    color: var(--preto);
+}
+
+.botoes{
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+}
+
+.botoes button{
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+.botoes button:hover{
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.623);
+}
