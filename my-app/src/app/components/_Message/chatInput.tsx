@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import styles from "./message.module.css"
 import React,{ useState } from 'react'
-import { newMessage } from "@/app/db/messagesDB"
 
 const ChatInput = (props : any) => {
 
@@ -22,8 +22,6 @@ const ChatInput = (props : any) => {
             data: (new Date().getHours()+":"+new Date().getMinutes()),
             senderP: false
         };
-
-        newMessage(id, newMsg)
 
         console.log (id, newMsg)
     }
