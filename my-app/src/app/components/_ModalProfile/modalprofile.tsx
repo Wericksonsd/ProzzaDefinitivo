@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import styles from "./modalprofile.module.css"
@@ -33,10 +34,6 @@ const ModalProfile = (props:any) => {
         }
     },[props])
 
-    const EditarDados = () => {
-
-    }
-
     const ConfirmarDados = () => {
         setOpen(!open)
     }    
@@ -66,7 +63,7 @@ const ModalProfile = (props:any) => {
                 </div>
                 <div className={styles.botoes}>
                     <button type="button" onClick={ConfirmarDados}className={styles.confirmar}>CONFIRMAR</button>
-                    <button type="button" onClick={EditarDados} className={styles.editar}>EDITAR</button>
+                    <button type="button" className={styles.editar}>EDITAR</button>
                     <button type="button" className={styles.deslogar}>SAIR DA CONTA</button>
                 </div>
             </div>

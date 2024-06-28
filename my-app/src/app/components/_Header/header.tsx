@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import styles from "./header.module.css"
@@ -28,7 +29,6 @@ const Header = (props : any) => {
                 <img className={styles.profilePic} src={foto} alt="" />
                 <img className={styles.config} onClick={ModalOpen} src="../cfg.svg" alt="" />
             </div>
-            <ModalProfile modalP={modal}/>
             {modal && <ModalProfile />}
         </div>
     );
